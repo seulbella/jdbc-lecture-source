@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+
+    <entry key="selectAllCategoryList">
+        SELECT
+        a.category_code,
+        a.category_name
+        FROM
+        tbl_category a
+        WHERE
+        a.ref_category_code IS NOT NULL
+    </entry>
+
+    <entry key="insertMenu">
+        INSERT INTO
+        tbl_menu (menu_name, menu_price, category_code, orderable_status)
+        VALUES
+        (?, ?, ?, ?)
+    </entry>
+</properties>
