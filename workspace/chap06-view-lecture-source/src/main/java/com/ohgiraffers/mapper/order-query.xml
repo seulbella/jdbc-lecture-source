@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+    <entry key="selectAllCategoryList">
+        SELECT
+        a.category_code,
+        a.category_name
+        FROM
+        tbl_category a
+        WHERE
+        a.ref_category_code IS NOT NULL
+    </entry>
+    <entry key="selectMenuByCategoryCode">
+        SELECT
+        a.menu_code,
+        a.menu_name,
+        a.menu_price,
+        a.category_code,
+        a.orderable_status
+        FROM
+        tbl_menu a
+        where
+        a.orderable_status = 'Y'
+        AND a.category_code = ?
+    </entry>
+    <entry key="insertOrder">
+        INSERT INTO
+        tbl_order (order_date, order_time, total_order_price)
+        VALUES
+        (?, ?, ?)
+    </entry>
+
+    <entry key="selectLastOrderCode">
+        SELECT
+        LAST_INSERT_ID() order_code
+    </entry>
+
+    <entry key="insertOrderMenu">
+        INSERT INTO
+        tbl_order_menu (order_code, menu_code, order_amount)
+        VALUES
+        (?, ?, ?)
+    </entry>
+</properties>

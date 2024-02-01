@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+    <entry key="insertMenu">
+        INSERT INTO
+        tbl_menu (menu_name, menu_price, category_code, orderable_status)
+        VALUES
+        (?, ?, ?, ?)
+    </entry>
+    <entry key="insertCategory">
+        INSERT INTO
+        tbl_category (category_name, ref_category_code)
+        VALUES
+        (?, ?)
+    </entry>
+    <entry key="selectLastCategoryCode">
+        SELECT LAST_INSERT_ID() AS category_code
+    </entry>
+</properties>
